@@ -1,4 +1,4 @@
-service: my-store-app
+service: flower-shop-yury
 
 frameworkVersion: "3"
 
@@ -19,8 +19,9 @@ plugins:
 
 custom:
   client:
-    bucketName: my-store-app
+    bucketName: flower-shop-yury
     distributionFolder: dist
+    indexDocument: index.html
   s3BucketName: ${self:custom.client.bucketName}
 
   ## Serverless-single-page-app-plugin configuration:
@@ -43,7 +44,7 @@ resources:
         # VersioningConfiguration:
         #   Status: Enabled
 
-    ## Specifying the policies to make sure all files inside the Bucket are avaialble to CloudFront
+    ## Specifying the policies to make sure all files inside the Bucket are available to CloudFront
     WebAppS3BucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
